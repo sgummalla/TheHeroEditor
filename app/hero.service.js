@@ -17,11 +17,11 @@ var HeroService = (function () {
         return Promise.resolve(heroes_1.HEROES);
     };
     HeroService.prototype.getHeroesSlowly = function () {
-        var _this = this;
-        return new Promise(function (resolve) {
-            return setTimeout(resolve, 2000);
-        }) // delay 2 seconds
-            .then(function () { return _this.getHeroes(); });
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                resolve(heroes_1.HEROES);
+            }, 10000); // delay 2 seconds
+        });
     };
     HeroService = __decorate([
         core_1.Injectable(), 
