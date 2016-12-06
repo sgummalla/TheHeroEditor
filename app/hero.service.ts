@@ -18,8 +18,8 @@ export class HeroService {
 
     getHero(id: number): Promise<Hero> {
         return this.getHeroes()
-            .then((heroes) => {
-                return heroes.find((hero) => {
+            .then((heroes: Hero[]) => {
+                return heroes.find((hero: Hero) => {
                     return hero.id === id;
                 });
             });
